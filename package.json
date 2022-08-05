@@ -22,5 +22,7 @@
   "dependencies": {
     "make": "^0.8.1",
     "makefiles": "^0.1.1"
-  }
+  },
+  "devDependencies": {},
+  "keywords": []
 }
