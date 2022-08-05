@@ -1,5 +1,6 @@
 {
   "name": "frontend-project-lvl1",
+  "type": "module",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/EllySmith/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/EllySmith/frontend-project-lvl1/actions)",
   "main": "index.js",
@@ -10,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "module",
+    "type": "git",
     "url": "git+https://github.com/EllySmith/frontend-project-lvl1.git"
   },
   "author": "",
@@ -21,8 +22,8 @@
   "homepage": "https://github.com/EllySmith/frontend-project-lvl1#readme",
   "dependencies": {
     "make": "^0.8.1",
-    "makefiles": "^0.1.1"
+    "makefiles": "^0.1.1",
+    "readline-sync": "^1.4.10"
   },
-  "devDependencies": {},
   "keywords": []
 }

@@ -1,5 +1,6 @@
-console.log("Welcome to the Brain Games!");
 
 import readlineSync from 'readline-sync';
 
-const name = readlineSync.question('Your answer: ');
+import * as dialog from '../src/cli.js';
+
+
