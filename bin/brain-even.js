@@ -33,7 +33,7 @@ else {
 
 if (goAhead === 1) {
   const randomNumber2 = Math.floor(Math.random()* 20);
-  console.log('Question: ' + randomNumber2);
+  console.log(`Question: ${randomNumber2}`);
 
 const isEven2 = readlineSync.question('Your answer: ');
 

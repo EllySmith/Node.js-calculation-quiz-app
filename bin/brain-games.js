@@ -7,6 +7,5 @@ import * as evennumber from './brain-even.js';
 
 import * as calc from './brain-calc.js';
 
-import * as calc2 from './brain-calc.js';
 
 
