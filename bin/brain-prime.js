@@ -6,7 +6,7 @@ import { name } from '../src/cli.js';
 
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
-const randomNumber = Math.floor(Math.random() * 15);
+const randomNumber = Math.floor(Math.random() * 10000);
 
 console.log(`Question ${randomNumber}`);
 
@@ -29,7 +29,7 @@ for (let i = 2; i < randomNumber/2 ; i++) {
 
     if (randomNumber % i !== 0) {
         primeOrNot = 'yes';
-        
+        continue;        
     }
     primeOrNot = 'yes';
     break;
