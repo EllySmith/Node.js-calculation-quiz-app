@@ -21,11 +21,21 @@ import { fifthGame } from './games/brain-progression-mechanism.js';
 console.log('Please choose the game:\n1 - Random calculation\n2 - Guess even number\n3 - Find gretest common divisor\n4 - Guess prime number \n5 - Guess missing number');
 
 const gameNumberAnswer = readlineSync.question('Your answer: ');
-const gameNumber = Number(gameNumberAnswer);
+let gameNumber = Number(gameNumberAnswer);
 
 let gameData;
 let gameData2;
 let gameData3;
+
+if (gameNumber < 1 || gameNumber > 5) {
+     console.log('Please choose one of the numbers above.');
+     const gameNumberAnswer = readlineSync.question('Your answer: ');
+     gameNumber = Number(gameNumberAnswer); 
+     if (gameNumber < 1 || gameNumber > 5) {
+          console.log('I am afraid you can\'t count ;( Please learn numbers and get back to me! Bye!');
+          process.exit();
+     }
+}
 
 if (gameNumber === 1) {
      gameData = firstGame(1);
