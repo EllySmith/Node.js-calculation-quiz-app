@@ -3,7 +3,6 @@ const firstGame = () => {
 
   const firstGameIntroduction = 'What is the result of the expression?';
   firstGameArr.push(firstGameIntroduction);
-
   const randomNumber1 = Math.floor(Math.random() * 20);
   const randomNumber2 = Math.floor(Math.random() * 20);
 
