@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Wed Aug 31 20:53:52 2022
+# Make data base, printed on Fri Sep  2 00:00:53 2022
 
 # Variables
 
@@ -38,8 +38,6 @@ VSCODE_CWD = /
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 # environment
-LaunchInstanceID = 597AFB80-4420-45C0-BEAC-E2191213EF00
-# environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
@@ -62,8 +60,6 @@ VSCODE_CODE_CACHE_PATH = /Users/ellysmith/Library/Application Support/Code/Cache
 # environment
 LOGNAME = ellysmith
 # environment
-DIRHELPER_USER_DIR_SUFFIX = com.apple.WorkflowKit.BackgroundShortcutRunner
-# environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
@@ -76,7 +72,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 1
+SHLVL = 2
 # default
 MAKE_VERSION := 3.81
 # environment
@@ -90,7 +86,7 @@ MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
 # default
 .VARIABLES := 
 # environment
-TMPDIR = /var/folders/xz/c82p4_yn5sd8pdr97lnq33ww0000gn/T/com.apple.WorkflowKit.BackgroundShortcutRunner/
+TMPDIR = /var/folders/xz/c82p4_yn5sd8pdr97lnq33ww0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
@@ -130,9 +126,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 46455
+VSCODE_PID = 78251
 # variable set hash-table stats:
-# Load=60/1024=6%, Rehash=0, Collisions=1/84=1%
+# Load=58/1024=6%, Rehash=0, Collisions=1/82=1%
 
 # Pattern-specific Variable Values
 
@@ -140,9 +136,9 @@ VSCODE_PID = 46455
 
 # Directories
 
-# . (device 16777220, inode 89470967): 14 files, no impossibilities.
+# . (device 16777220, inode 89470967): 15 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -164,7 +160,7 @@ brain-games:
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 5):
-	node bin/brain-games.js
+	node src/index.js
 	
 
 # Not a target:
@@ -176,7 +172,7 @@ brain-games:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-05 21:04:49
+#  Last modified 2022-08-31 21:07:27
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -209,7 +205,7 @@ install:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Aug 31 20:53:52 2022
+# Finished Make data base on Fri Sep  2 00:00:53 2022
 
  
 make: *** No rule to make target `all'.  Stop.
