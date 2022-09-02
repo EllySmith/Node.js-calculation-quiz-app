@@ -4,8 +4,8 @@ const thirdGame = () => {
   const thirdGameIntroduction = 'Find the greatest common divisor of given numbers.';
   thirdGameArr.push(thirdGameIntroduction);
 
-  const randomNumber1 = Math.floor(Math.random() * 20);
-  const randomNumber2 = Math.floor(Math.random() * 20);
+  const randomNumber1 = Math.floor(Math.random() * 40 + 1);
+  const randomNumber2 = Math.floor(Math.random() * 40 + 1);
 
   const thirdGameQuestion = `Question: ${randomNumber1} ${randomNumber2}`;
   thirdGameArr.push(thirdGameQuestion);
