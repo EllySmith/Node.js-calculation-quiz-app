@@ -58,4 +58,6 @@ if (answer === game[2].toString()) {
     console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
     }
 
+    
+
 export { secondGame };
