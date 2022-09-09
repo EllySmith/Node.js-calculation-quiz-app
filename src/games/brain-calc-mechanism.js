@@ -47,35 +47,21 @@ const firstGame = () => {
 };
 
 
-let game = firstGame(1);
+let i;
+for (let i = 1; i <= 3; i++) {
+let game = firstGame(i);
 console.log(game[0]);
 console.log(game[1]);
-
 const answer = readlineSync.question('Your answer: ');
 if (answer === game[2].toString()) {
   console.log('Correct!');
-  let game = firstGame(2);
-  console.log(game[1]);  
-  const answer = readlineSync.question('Your answer: ');
-    if (answer === game[2].toString()) {
-      let game = firstGame(2);
-      console.log(game[1]);  
-      const answer = readlineSync.question('Your answer: ');
-      if (answer === game[2].toString()) {
-      console.log(`Correct!\nCongratulations, ${name}!`);
-      }
-      else {
-        console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
-        
-      }
-    }
-    else {
-      console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
-      
-    }
-  }
-  else {
-    console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
-    }
+}
+else {
+  console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
+  process.exit();
+};
+}
+
+console.log(`Congratulations, ${name}!`);
 
 export { firstGame };
