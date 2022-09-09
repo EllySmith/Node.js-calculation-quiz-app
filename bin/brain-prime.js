@@ -1,47 +1,75 @@
 import readlineSync from 'readline-sync';
 
-import * as dialog from '../src/cli.js';
+import * as dialog from './../cli.js';
 
-import { name } from '../src/cli.js';
+import { name } from './../cli.js';
 
-console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+const forthGame = () => {
+  const array = [];
+  const forthGameIntroduction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  array.push(forthGameIntroduction);
 
-const randomNumber = Math.floor(Math.random() * 10000);
+  const randomNumber = Math.floor(Math.random() * 100);
+  const forthGameQuestion = `Question ${randomNumber}`;
+  array.push(forthGameQuestion);
 
-console.log(`Question ${randomNumber}`);
-
-
-let primeOrNot = 'no';
-
-for (let i = 2; i < randomNumber/2 ; i++) {
+  let primeOrNot = 'no';
+  for (let i = 2; i < randomNumber / 2; i++) {
     if (randomNumber === 2) {
-        primeOrNot = 'yes';
-        break;
+      primeOrNot = 'yes';
+      break;
     }
     if (randomNumber === 3) {
-        primeOrNot = 'yes';
-        break;
+      primeOrNot = 'yes';
+      break;
     }
     if (randomNumber % i === 0) {
-        primeOrNot = 'no';
-        break;
+      primeOrNot = 'no';
+      break;
     }
 
     if (randomNumber % i !== 0) {
-        primeOrNot = 'yes';
-        continue;        
+      primeOrNot = 'yes';
+      continue;
     }
     primeOrNot = 'yes';
     break;
-    
-}
+  }
+   const forthGameAnswer = primeOrNot;
+   array.push(forthGameAnswer);
+   return array;
+};
 
-const userGuess = readlineSync.question('Your answer: ');
+let game = forthGame(1);
+console.log(game[0]);
+console.log(game[1]);
 
-if (userGuess === primeOrNot) {
-    console.log('Correct!');
-}
+const answer = readlineSync.question('Your answer: ');
+if (answer === game[2]) {
+  console.log('Correct!');
+  let game = forthGame(2);
+  console.log(game[1]);  
+  const answer = readlineSync.question('Your answer: ');
+    if (answer === game[2]) {
+      let game = forthGame(2);
+      console.log(game[1]);  
+      const answer = readlineSync.question('Your answer: ');
+      if (answer === game[2]) {
+      console.log(`Correct!\nCongratulations, ${name}!`);
+      }
+      else {
+        console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
+        
+      }
+    }
+    else {
+      console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
+      
+    }
+  }
+  else {
+    console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
+    }
 
-if (userGuess !== primeOrNot) {
-    console.log(`'${userGuess}' is wrong answer ;(. Correct answer was '${primeOrNot}'.\nLet\'s try again, ${name}!`);
-}
+
+  export default { forthGame };

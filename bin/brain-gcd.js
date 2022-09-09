@@ -1,64 +1,85 @@
 import readlineSync from 'readline-sync';
 
-import * as dialog from '../src/cli.js';
+import * as dialog from './../cli.js';
 
-import { name } from '../src/cli.js';
+import { name } from './../cli.js';
 
-console.log('Find the greatest common divisor of given numbers.');
+const thirdGame = () => {
+  const thirdGameArr = [];
 
-const randomNumber1 = Math.floor(Math.random() * 20);
-const randomNumber2 = Math.floor(Math.random() * 20);
+  const thirdGameIntroduction = 'Find the greatest common divisor of given numbers.';
+  thirdGameArr.push(thirdGameIntroduction);
 
-console.log(`Question: ${randomNumber1} ${randomNumber2}`); 
+  const randomNumber1 = Math.floor(Math.random() * 40 + 1);
+  const randomNumber2 = Math.floor(Math.random() * 40 + 1);
 
-const userResultString = readlineSync.question('Your answer: ');
-    const userResult = Math.floor(userResultString);
+  const thirdGameQuestion = `Question: ${randomNumber1} ${randomNumber2}`;
+  thirdGameArr.push(thirdGameQuestion);
 
-const denominatorsOne = [];
+  const denominatorsOne = [];
 
-for (let i = 0; i <= randomNumber1; i++) {
-if (randomNumber1 % i === 0) {
-    denominatorsOne.push(i);    
-}
-else {
-    continue;
-}
-}
+  for (let i = 0; i <= randomNumber1; i++) {
+    if (randomNumber1 % i === 0) {
+      denominatorsOne.push(i);
+    }
 
-const denominatorsTwo = [];
+    else {
+      continue;
+    }
+  }
 
-for (let i = 0; i <= randomNumber2; i++) {
-if (randomNumber2 % i === 0) {
-    denominatorsTwo.push(i);    
-}
-else {
-    continue;
-}
-}
+  const denominatorsTwo = [];
 
-let commonDenominators = [];
+  for (let i = 0; i <= randomNumber2; i++) {
+    if (randomNumber2 % i === 0) {
+      denominatorsTwo.push(i);
+    } else {
+      continue;
+    }
+  }
 
-for (const denominator of denominatorsOne) {
+  const commonDenominators = [];
+
+  for (const denominator of denominatorsOne) {
     if (denominatorsTwo.includes(denominator)) {
-        commonDenominators.push(denominator);
+      commonDenominators.push(denominator);
+    }
+  }
+
+  const thirdGameAnswer = commonDenominators[commonDenominators.length - 1];
+  thirdGameArr.push(thirdGameAnswer);
+  return thirdGameArr;
+};
+
+let game = thirdGame(1);
+console.log(game[0]);
+console.log(game[1]);
+
+const answer = readlineSync.question('Your answer: ');
+if (answer === game[2].toString()) {
+  console.log('Correct!');
+  let game = thirdGame(2);
+  console.log(game[1]);  
+  const answer = readlineSync.question('Your answer: ');
+    if (answer === game[2].toString()) {
+      let game = thirdGame(2);
+      console.log(game[1]);  
+      const answer = readlineSync.question('Your answer: ');
+      if (answer === game[2].toString()) {
+      console.log(`Correct!\nCongratulations, ${name}!`);
+      }
+      else {
+        console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
+        
+      }
+    }
+    else {
+      console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
+      
+    }
+  }
+  else {
+    console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
     }
 
-    }
-
-let result = commonDenominators[commonDenominators.length-1];
-
-let goAhead = 0;
-
-if (userResult === result) {
-    console.log('Correct!')
-    goAhead = 1;
-}
-
-else {
-    console.log(`'${userResult}' is wrong answer ;(. Correct answer was '${result}'.\nLet\'s try again, ${name}!`);
-   goAhead = 0;
-}
-
-if (goAhead === 1) {
-    
-}
+export { thirdGame };
