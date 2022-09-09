@@ -45,6 +45,8 @@ const firstGame = () => {
   firstGameArr.push(rightAnswerOne);
   return firstGameArr;
 };
+
+
 let game = firstGame(1);
 console.log(game[0]);
 console.log(game[1]);

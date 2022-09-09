@@ -1,5 +1,5 @@
 {
-  "name": "frontend-project-lvl1",
+  "name": "@hexlet/code",
   "type": "module",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/EllySmith/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/EllySmith/frontend-project-lvl1/actions)",
@@ -28,5 +28,6 @@
     "makefiles": "^0.1.1",
     "readline-sync": "^1.4.10"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {}
 }
