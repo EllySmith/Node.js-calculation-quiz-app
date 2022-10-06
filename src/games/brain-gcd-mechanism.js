@@ -49,25 +49,25 @@ const thirdGameArr = () => {
 };
 
 export const thirdGame = () => {
-console.log("Welcome to the Brain Games!");
-const name = readlineSync.question("May I have your name? ");
-console.log(`Hello, ${name}!`); 
-let i;
-for (let i = 1; i <= 3; i++) {
-let game = thirdGameArr(i);
-console.log(game[0]);
-console.log(game[1]);
-const answer = readlineSync.question('Your answer: ');
-if (answer === game[2].toString()) {
-  console.log('Correct!');
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  for (let i = 1; i <= 3; i+=1) {
+    const game = thirdGameArr(i);
+    console.log(game[0]);
+    console.log(game[1]);
+    const answer = readlineSync.question('Your answer: ');
+    if (answer === game[2].toString()) {
+      console.log('Correct!');
+    }
+    else {
+      console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
+      process.exit();
+    };
+  
+  console.log(`Congratulations, ${name}!`);
 }
-else {
-  console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
-  process.exit();
-};
-}
-console.log(`Congratulations, ${name}!`);
 }
 
 
-export default { thirdGame };
+
