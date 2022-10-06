@@ -26,7 +26,7 @@ const fifthGameArr = () => {
   for (const number of randomProgression) {
     questionSequence += ` ${number}`;
   }
-  const fifthGameQuestion = `Question: ${questionSequence}`;
+  const fifthGameQuestion = `Question:${questionSequence}`;
   array.push(fifthGameQuestion);
   array.push(answer);
 
