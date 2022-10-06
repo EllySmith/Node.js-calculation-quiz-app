@@ -56,8 +56,5 @@ else {
   process.exit();
 };
 }
-
 console.log(`Congratulations, ${name}!`);
 }
-
-export default { forthGame };
