@@ -14,23 +14,25 @@ const thirdGameArr = () => {
 
   const denominatorsOne = [];
 
-  for (let i = 0; i <= randomNumber1; i += 1) {
+  for (let i = 1; i <= randomNumber1; i += 1) {
     if (randomNumber1 % i === 0) {
       denominatorsOne.push(i);
     } else {
       i += 1;
     }
   }
+console.log(denominatorsOne);
 
   const denominatorsTwo = [];
 
-  for (let i = 0; i <= randomNumber2; i += 1) {
+  for (let i = 1; i <= randomNumber2; i += 1) {
     if (randomNumber2 % i === 0) {
       denominatorsTwo.push(i);
     } else {
       i += 1;
     }
   }
+console.log(denominatorsTwo);
 
   const commonDenominators = [];
 
@@ -39,7 +41,7 @@ const thirdGameArr = () => {
       commonDenominators.push(denominator);
     }
   }
-
+console.log(commonDenominators);
   const thirdGameAnswer = commonDenominators[commonDenominators.length - 1];
   array.push(thirdGameAnswer);
   return array;
@@ -54,7 +56,7 @@ const thirdGame = () => {
     console.log(game[0]);
     console.log(game[1]);
     const answer = readlineSync.question('Your answer: ');
-    if (answer === game[2].toString()) {
+    if (Number(answer) === game[2]) {
       console.log('Correct!');
     } else {
       console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
