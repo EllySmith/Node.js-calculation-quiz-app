@@ -18,7 +18,7 @@ const thirdGameArr = () => {
     if (randomNumber1 % i === 0) {
       denominatorsOne.push(i);
     } else {
-      i += 1;
+      continue;
     }
   }
 
@@ -28,7 +28,7 @@ const thirdGameArr = () => {
     if (randomNumber2 % i === 0) {
       denominatorsTwo.push(i);
     } else {
-      i += 1;
+      continue;
     }
   }
 
