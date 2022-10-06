@@ -10,7 +10,7 @@ const forthGameArr = () => {
   array.push(forthGameQuestion);
 
   let primeOrNot = 'no';
-  for (let i = 2; i < randomNumber / 2; i++) {
+  for (let i = 2; i < randomNumber / 2; i += 1) {
     if (randomNumber === 2) {
       primeOrNot = 'yes';
       break;
@@ -26,7 +26,7 @@ const forthGameArr = () => {
 
     if (randomNumber % i !== 0) {
       primeOrNot = 'yes';
-      continue;
+      i = i + 1;
     }
     primeOrNot = 'yes';
     break;
