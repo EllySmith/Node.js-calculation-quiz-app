@@ -4,11 +4,11 @@ import * as dialog from './../cli.js';
 
 import { name } from './../cli.js';
 
-const firstGame = () => {
-  let firstGameArr = [];
+const firstGameArr = () => {
+  let array = [];
 
   const firstGameIntroduction = 'What is the result of the expression?';
-  firstGameArr.push(firstGameIntroduction);
+  array.push(firstGameIntroduction);
   const randomNumber1 = Math.floor(Math.random() * 20);
   const randomNumber2 = Math.floor(Math.random() * 20);
 
@@ -27,7 +27,7 @@ const firstGame = () => {
   }
 
   const questionGameOne = `Question: ${randomNumber1} ${randomOperator} ${randomNumber2}`;
-  firstGameArr.push(questionGameOne);
+  array.push(questionGameOne);
   let realResult = 0;
 
   if (randomOperatorIndex >= 0 && randomOperatorIndex < 1) {
@@ -42,14 +42,15 @@ const firstGame = () => {
     realResult = randomNumber1 * randomNumber2;
   }
   const rightAnswerOne = realResult;
-  firstGameArr.push(rightAnswerOne);
-  return firstGameArr;
+  array.push(rightAnswerOne);
+  return array;
 };
 
 
+export const firstGame = () => {
 let i;
 for (let i = 1; i <= 3; i++) {
-let game = firstGame(i);
+let game = firstGameArr(i);
 console.log(game[0]);
 console.log(game[1]);
 const answer = readlineSync.question('Your answer: ');
@@ -61,7 +62,5 @@ else {
   process.exit();
 };
 }
-
+}
 console.log(`Congratulations, ${name}!`);
-
-export { firstGame };

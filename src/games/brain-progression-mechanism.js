@@ -4,11 +4,11 @@ import * as dialog from './../cli.js';
 
 import { name } from './../cli.js';
 
-const fifthGame = () => {
-  const fifthGameArr = [];
+const fifthGameArr = () => {
+  const array = [];
 
   const fifthGameIntroduction = 'What number is missing in the progression?';
-  fifthGameArr.push(fifthGameIntroduction);
+  array.push(fifthGameIntroduction);
 
   const randomProgressionStep = Math.floor(Math.random() * 10 + 3);
   const randomProgression = [];
@@ -30,28 +30,27 @@ const fifthGame = () => {
     questionSequence += ` ${number}`;
   }
   const fifthGameQuestion = `Question: ${questionSequence}`;
-  fifthGameArr.push(fifthGameQuestion);
-  fifthGameArr.push(answer);
+  array.push(fifthGameQuestion);
+  array.push(answer);
 
-  return fifthGameArr;
+  return array;
 };
 
 
-let i;
-for (let i = 1; i <= 3; i++) {
-let game = fifthGame(i);
-console.log(game[0]);
-console.log(game[1]);
-const answer = readlineSync.question('Your answer: ');
-if (answer === game[2].toString()) {
-  console.log('Correct!');
-}
-else {
-  console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
-  process.exit();
-};
-}
-
-console.log(`Congratulations, ${name}!`);
-
-export { fifthGame };
+export const fifthGame = () => {
+  let i;
+  for (let i = 1; i <= 3; i++) {
+  let game = fifthGameArr(i);
+  console.log(game[0]);
+  console.log(game[1]);
+  const answer = readlineSync.question('Your answer: ');
+  if (answer === game[2].toString()) {
+    console.log('Correct!');
+  }
+  else {
+    console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
+    process.exit();
+  };
+  }
+  }
+  console.log(`Congratulations, ${name}!`);

@@ -4,17 +4,17 @@ import * as dialog from './../cli.js';
 
 import { name } from './../cli.js';
 
-const thirdGame = () => {
-  const thirdGameArr = [];
+const thirdGameArr = () => {
+  const array = [];
 
   const thirdGameIntroduction = 'Find the greatest common divisor of given numbers.';
-  thirdGameArr.push(thirdGameIntroduction);
+  array.push(thirdGameIntroduction);
 
   const randomNumber1 = Math.floor(Math.random() * 40 + 1);
   const randomNumber2 = Math.floor(Math.random() * 40 + 1);
 
   const thirdGameQuestion = `Question: ${randomNumber1} ${randomNumber2}`;
-  thirdGameArr.push(thirdGameQuestion);
+  array.push(thirdGameQuestion);
 
   const denominatorsOne = [];
 
@@ -47,13 +47,14 @@ const thirdGame = () => {
   }
 
   const thirdGameAnswer = commonDenominators[commonDenominators.length - 1];
-  thirdGameArr.push(thirdGameAnswer);
-  return thirdGameArr;
+  array.push(thirdGameAnswer);
+  return array;
 };
 
+export const thirdGame = () => {
 let i;
 for (let i = 1; i <= 3; i++) {
-let game = thirdGame(i);
+let game = thirdGameArr(i);
 console.log(game[0]);
 console.log(game[1]);
 const answer = readlineSync.question('Your answer: ');
@@ -65,7 +66,7 @@ else {
   process.exit();
 };
 }
-
+}
 console.log(`Congratulations, ${name}!`);
 
 export default { thirdGame };

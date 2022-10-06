@@ -4,15 +4,15 @@ import * as dialog from './../cli.js';
 
 import { name } from './../cli.js';
 
-const secondGame = () => {
-  const secondGameArr = [];
+const secondGameArr = () => {
+  const array = [];
 
   const secondGameIntroduction = 'Answer "yes" if the number is even, otherwise answer "no".';
-  secondGameArr.push(secondGameIntroduction);
+  array.push(secondGameIntroduction);
 
   const randomNumber = Math.floor(Math.random() * 20);
   const secondGameQuestion = `Question: ${randomNumber}`;
-  secondGameArr.push(secondGameQuestion);
+  array.push(secondGameQuestion);
 
   let isNumberEven;
 
@@ -23,13 +23,14 @@ const secondGame = () => {
     (isNumberEven = 'no');
   }
 
-  secondGameArr.push(isNumberEven);
-  return secondGameArr;
+  array.push(isNumberEven);
+  return array;
 };
 
+export const secondGame = () => {
 let i;
 for (let i = 1; i <= 3; i++) {
-let game = secondGame(i);
+let game = secondGameArr(i);
 console.log(game[0]);
 console.log(game[1]);
 const answer = readlineSync.question('Your answer: ');
@@ -41,8 +42,6 @@ else {
   process.exit();
 };
 }
-
+}
 console.log(`Congratulations, ${name}!`);
 
-
-export { secondGame };

@@ -4,7 +4,7 @@ import * as dialog from './../cli.js';
 
 import { name } from './../cli.js';
 
-const forthGame = () => {
+const forthGameArr = () => {
   const array = [];
   const forthGameIntroduction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   array.push(forthGameIntroduction);
@@ -40,9 +40,10 @@ const forthGame = () => {
    return array;
 };
 
-let i;
+export const forthGame = () => {
+  let i;
 for (let i = 1; i <= 3; i++) {
-let game = forthGame(i);
+let game = forthGameArr(i);
 console.log(game[0]);
 console.log(game[1]);
 const answer = readlineSync.question('Your answer: ');
@@ -56,6 +57,6 @@ else {
 }
 
 console.log(`Congratulations, ${name}!`);
+}
 
-
-  export default { forthGame };
+export default { forthGame };

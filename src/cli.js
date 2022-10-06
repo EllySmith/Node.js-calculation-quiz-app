@@ -6,6 +6,5 @@ const username = readlineSync.question('Your answer: ');
 
 export const name = username;
 
-
 console.log("Hello, "+name+"!");
 
