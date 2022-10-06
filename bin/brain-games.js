@@ -1,3 +1,3 @@
-import { helloDialog } from '../src/cli.js';
+import helloDialog from '../src/cli.js';
 
 helloDialog();
