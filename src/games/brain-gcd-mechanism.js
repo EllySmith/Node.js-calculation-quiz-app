@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import readlineSync from 'readline-sync';
 
 const thirdGameArr = () => {
@@ -14,21 +15,21 @@ const thirdGameArr = () => {
 
   const denominatorsOne = [];
 
-  for (let i = 0; i <= randomNumber1; i++) {
+  for (let i = 0; i <= randomNumber1; i += 1) {
     if (randomNumber1 % i === 0) {
       denominatorsOne.push(i);
     } else {
-      continue;
+      i += 1;
     }
   }
 
   const denominatorsTwo = [];
 
-  for (let i = 0; i <= randomNumber2; i++) {
+  for (let i = 0; i <= randomNumber2; i += 1) {
     if (randomNumber2 % i === 0) {
       denominatorsTwo.push(i);
     } else {
-      continue;
+      i += 1;
     }
   }
 
