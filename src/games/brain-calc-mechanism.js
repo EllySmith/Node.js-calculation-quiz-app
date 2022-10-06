@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 const firstGameArr = () => {
-  let array = [];
+  const array = [];
 
   const firstGameIntroduction = 'What is the result of the expression?';
   array.push(firstGameIntroduction);
@@ -42,12 +42,11 @@ const firstGameArr = () => {
   return array;
 };
 
-
-export const firstGame = () => {
+const firstGame = () => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  for (let i = 1; i <= 3; i+=1) {
+  for (let i = 1; i <= 3; i+= 1) {
     const game = firstGameArr(i);
     console.log(game[0]);
     console.log(game[1]);
@@ -61,5 +60,6 @@ export const firstGame = () => {
     };
   
   console.log(`Congratulations, ${name}!`);
-}
-}
+    }
+  }
+export default firstGame;
