@@ -2,20 +2,20 @@ install:
 	npm ci
 
 brain-games:
-	node src/index.js
+	node bin/brain-games.js
 
 brain-calc:
-	node src/games/brain-calc-mechanism.js
+	node bin/brain-calc.js
 
 brain-even:
-	node src/games/brain-even-mechanism.js
+	node bin/brain-even.js
 
 brain-gcd:
-	node src/games/brain-gcd-mechanism.js
+	node bin/brain-gcd.js
 
 brain-progression:
-	node src/games/brain-progression-mechanism.js
+	node bin/brain-progression.js
 
 brain-prime:
-	node src/games/brain-prime-mechanism.js
+	node bin/brain-prime.js
 	
