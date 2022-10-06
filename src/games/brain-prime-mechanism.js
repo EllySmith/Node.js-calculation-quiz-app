@@ -8,7 +8,7 @@ const forthGameArr = () => {
   array.push(forthGameIntroduction);
 
   const randomNumber = Math.floor(Math.random() * 100);
-  const forthGameQuestion = `Question ${randomNumber}`;
+  const forthGameQuestion = `Question: ${randomNumber}`;
   array.push(forthGameQuestion);
 
   let primeOrNot = 'no';
