@@ -1,10 +1,8 @@
 import readlineSync from 'readline-sync';
 
-console.log("Welcome to the Brain Games!\nMay I have your name?");
-
-const username = readlineSync.question('Your answer: ');
-
-export const name = username;
-
-console.log("Hello, "+name+"!");
-
+export const helloDialog = () => {
+     console.log("Welcome to the Brain Games!")
+     const name = readlineSync.question("May I have your name? ")
+     console.log(`Hello, ${name}!`)
+   }
+   export default helloDialog;
