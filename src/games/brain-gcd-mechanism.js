@@ -13,33 +13,22 @@ const thirdGameArr = () => {
   array.push(thirdGameQuestion);
 
   const denominatorsOne = [];
-
   for (let i = 1; i <= randomNumber1; i += 1) {
     if (randomNumber1 % i === 0) {
       denominatorsOne.push(i);
-    } else {
-      i += 1;
     }
   }
-
 
   const denominatorsTwo = [];
-
-  for (let i = 1; i <= randomNumber2; i += 1) {
+  for (let i = 1; i <= randomNumber1; i += 1) {
     if (randomNumber2 % i === 0) {
       denominatorsTwo.push(i);
-    } else {
-      i += 1;
     }
   }
 
-
   const commonDenominators = [];
-
-  for (const denominator of denominatorsOne) {
-    if (denominatorsTwo.includes(denominator)) {
-      commonDenominators.push(denominator);
-    }
+  for (const value of denominatorsOne) {
+    if (denominatorsTwo.includes(value)) commonDenominators.push(value);
   }
 
   const thirdGameAnswer = commonDenominators[commonDenominators.length - 1];
