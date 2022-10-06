@@ -38,6 +38,7 @@ const fifthGame = () => {
   console.log(`Hello, ${name}!`);
   for (let i = 1; i <= 3; i += 1) {
     const game = fifthGameArr(i);
+    console.log(game);
     console.log(game[0]);
     console.log(game[1]);
     const answer = readlineSync.question('Your answer: ');

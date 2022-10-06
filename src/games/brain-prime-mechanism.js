@@ -5,32 +5,18 @@ const forthGameArr = () => {
   const forthGameIntroduction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   array.push(forthGameIntroduction);
 
-  const randomNumber = Math.floor(Math.random() * 100);
+  const randomNumber = Math.floor(Math.random() * 100 + 1);
   const forthGameQuestion = `Question: ${randomNumber}`;
   array.push(forthGameQuestion);
 
-  let primeOrNot = 'no';
-  for (let i = 2; i < randomNumber / 2; i += 1) {
-    if (randomNumber === 2) {
-      primeOrNot = 'yes';
-      break;
-    }
-    if (randomNumber === 3) {
-      primeOrNot = 'yes';
-      break;
-    }
+  let primeOrNot = 'yes';
+  for (let i = 2; i < randomNumber; i += 1) {
     if (randomNumber % i === 0) {
       primeOrNot = 'no';
       break;
     }
-
-    if (randomNumber % i !== 0) {
-      primeOrNot = 'yes';
-      i = i + 1;
-    }
-    primeOrNot = 'yes';
-    break;
   }
+
   const forthGameAnswer = primeOrNot;
   array.push(forthGameAnswer);
   return array;
