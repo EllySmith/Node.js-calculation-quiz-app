@@ -21,7 +21,7 @@ const thirdGameArr = () => {
       i += 1;
     }
   }
-console.log(denominatorsOne);
+
 
   const denominatorsTwo = [];
 
@@ -32,7 +32,7 @@ console.log(denominatorsOne);
       i += 1;
     }
   }
-console.log(denominatorsTwo);
+
 
   const commonDenominators = [];
 
@@ -41,7 +41,7 @@ console.log(denominatorsTwo);
       commonDenominators.push(denominator);
     }
   }
-console.log(commonDenominators);
+
   const thirdGameAnswer = commonDenominators[commonDenominators.length - 1];
   array.push(thirdGameAnswer);
   return array;
