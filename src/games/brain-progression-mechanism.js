@@ -1,8 +1,5 @@
 import readlineSync from 'readline-sync';
 
-import * as dialog from './../cli.js';
-
-import { name } from './../cli.js';
 
 const fifthGameArr = () => {
   const array = [];
@@ -38,6 +35,9 @@ const fifthGameArr = () => {
 
 
 export const fifthGame = () => {
+  console.log("Welcome to the Brain Games!");
+  const name = readlineSync.question("May I have your name? ");
+  console.log(`Hello, ${name}!`); 
   let i;
   for (let i = 1; i <= 3; i++) {
   let game = fifthGameArr(i);
@@ -52,5 +52,6 @@ export const fifthGame = () => {
     process.exit();
   };
   }
-  }
   console.log(`Congratulations, ${name}!`);
+  }
+  
