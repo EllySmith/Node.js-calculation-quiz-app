@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import gameMechanism from '../index.js';
 
 import getRandomNumber from '../randomnumber.js';

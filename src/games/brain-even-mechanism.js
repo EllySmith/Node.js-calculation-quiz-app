@@ -32,5 +32,4 @@ const secondGame = () => {
   gameMechanism('Answer "yes" if the number is even, otherwise answer "no".', questions, answers);
 };
 
-
 export default secondGame;
