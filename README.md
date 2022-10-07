@@ -17,4 +17,5 @@ command: make brain-gcd
 Brain-prime: You are given a random number and have to tell if the number is prime. Answer "yes" or "no".
 command: make brain-prime
 
-Brain-progression: You are given a random number progression with one element hidden. You need to tell the hidden nuber. The answer is the number. 
+Brain-progression: You are given a random number progression with one element hidden. You need to tell the hidden number. The answer is the number. 
+command: make brain-progression
