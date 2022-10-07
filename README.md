@@ -18,3 +18,4 @@ Brain-prime: You are given a random number and have to tell if the number is pri
 command: make brain-prime
 
 Brain-progression: You are given a random number progression with one element hidden. You need to tell the hidden number. The answer is the number. 
+command: make brain-progression
