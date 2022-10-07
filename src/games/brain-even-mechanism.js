@@ -1,6 +1,4 @@
 /* eslint-disable no-console */
-import readlineSync from 'readline-sync';
-
 import getRandomNumber from '../randomnumber.js';
 
 import gameMechanism from '../index.js';
