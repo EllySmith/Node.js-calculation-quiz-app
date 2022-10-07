@@ -16,7 +16,7 @@ const fifthGameArr = () => {
     numberCount += 1;
     randomProgression.push(i);
   }
-  const hiddenNumberIndex = Math.floor(Math.random() * randomProgression.length);
+  const hiddenNumberIndex = getRandomNumber(1, 10);
   const answer = randomProgression[hiddenNumberIndex];
   randomProgression[hiddenNumberIndex] = '..';
 
