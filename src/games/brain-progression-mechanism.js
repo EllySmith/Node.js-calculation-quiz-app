@@ -1,14 +1,14 @@
 import readlineSync from 'readline-sync';
+import gameMechanism from '../index.js';
+
+import getRandomNumber from '../randomnumber.js';
 
 const fifthGameArr = () => {
   const array = [];
 
-  const fifthGameIntroduction = 'What number is missing in the progression?';
-  array.push(fifthGameIntroduction);
-
-  const randomProgressionStep = Math.floor(Math.random() * 10 + 3);
+  const randomProgressionStep = getRandomNumber(3, 10);
   const randomProgression = [];
-  let i = Math.floor(Math.random() * 6) + 1;
+  let i = getRandomNumber(1, 6);
   randomProgression.push(i);
   let numberCount = 0;
 
@@ -32,24 +32,14 @@ const fifthGameArr = () => {
   return array;
 };
 
-const fifthGame = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  for (let i = 1; i <= 3; i += 1) {
-    const game = fifthGameArr(i);
-    console.log(game);
-    console.log(game[0]);
-    console.log(game[1]);
-    const answer = readlineSync.question('Your answer: ');
-    if (answer === game[2].toString()) {
-      console.log('Correct!');
-    } else {
-      console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
-      process.exit();
-    }
+const firstRound = fifthGameArr(1);
+const secondRound = fifthGameArr(2);
+const thirdRound = fifthGameArr(3);
+const questions = [firstRound[0], secondRound[0], thirdRound[0]];
+const answers = [firstRound[1], secondRound[1], thirdRound[1]];
 
-    console.log(`Congratulations, ${name}!`);
-  }
+const fifthGame = () => {
+  gameMechanism('What number is missing in the progression?', questions, answers);
 };
+
 export default fifthGame;

@@ -1,13 +1,14 @@
 import readlineSync from 'readline-sync';
 
+import getRandomNumber from '../randomnumber.js';
+
+import gameMechanism from '../index.js';
+
 const thirdGameArr = () => {
   const array = [];
 
-  const thirdGameIntroduction = 'Find the greatest common divisor of given numbers.';
-  array.push(thirdGameIntroduction);
-
-  const randomNumber1 = Math.floor(Math.random() * 40 + 1);
-  const randomNumber2 = Math.floor(Math.random() * 40 + 1);
+  const randomNumber1 = getRandomNumber(1, 100);
+  const randomNumber2 = getRandomNumber(1, 100);
 
   const thirdGameQuestion = `Question: ${randomNumber1} ${randomNumber2}`;
   array.push(thirdGameQuestion);
@@ -36,23 +37,14 @@ const thirdGameArr = () => {
   return array;
 };
 
-const thirdGame = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  for (let i = 1; i <= 3; i += 1) {
-    const game = thirdGameArr(i);
-    console.log(game[0]);
-    console.log(game[1]);
-    const answer = readlineSync.question('Your answer: ');
-    if (Number(answer) === game[2]) {
-      console.log('Correct!');
-    } else {
-      console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
-      process.exit();
-    }
+const firstRound = thirdGameArr(1);
+const secondRound = thirdGameArr(2);
+const thirdRound = thirdGameArr(3);
+const questions = [firstRound[0], secondRound[0], thirdRound[0]];
+const answers = [firstRound[1], secondRound[1], thirdRound[1]];
 
-    console.log(`Congratulations, ${name}!`);
-  }
+const thirdGame = () => {
+  gameMechanism('Find the greatest common divisor of given numbers.', questions, answers);
 };
+
 export default thirdGame;

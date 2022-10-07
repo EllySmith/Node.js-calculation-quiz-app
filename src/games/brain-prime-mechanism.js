@@ -1,11 +1,13 @@
 import readlineSync from 'readline-sync';
 
+import getRandomNumber from '../randomnumber.js';
+
+import gameMechanism from '../index.js';
+
 const forthGameArr = () => {
   const array = [];
-  const forthGameIntroduction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  array.push(forthGameIntroduction);
 
-  const randomNumber = Math.floor(Math.random() * 100 + 1);
+  const randomNumber = getRandomNumber(1, 100);
   const forthGameQuestion = `Question: ${randomNumber}`;
   array.push(forthGameQuestion);
 
@@ -22,22 +24,13 @@ const forthGameArr = () => {
   return array;
 };
 
+const firstRound = forthGameArr(1);
+const secondRound = forthGameArr(2);
+const thirdRound = forthGameArr(3);
+const questions = [firstRound[0], secondRound[0], thirdRound[0]];
+const answers = [firstRound[1], secondRound[1], thirdRound[1]];
+
 const forthGame = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  for (let i = 1; i <= 3; i += 1) {
-    const game = forthGameArr(i);
-    console.log(game[0]);
-    console.log(game[1]);
-    const answer = readlineSync.question('Your answer: ');
-    if (answer === game[2]) {
-      console.log('Correct!');
-    } else {
-      console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
-      process.exit();
-    }
-  }
-  console.log(`Congratulations, ${name}!`);
+  gameMechanism('Answer "yes" if the number is prime, otherwise answer "no".', questions, answers);
 };
 export default forthGame;

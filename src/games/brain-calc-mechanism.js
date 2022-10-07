@@ -1,14 +1,16 @@
 import readlineSync from 'readline-sync';
 
+import getRandomNumber from '../randomnumber.js';
+
+import gameMechanism from '../index.js';
+
 const firstGameArr = () => {
   const array = [];
 
-  const firstGameIntroduction = 'What is the result of the expression?';
-  array.push(firstGameIntroduction);
-  const randomNumber1 = Math.floor(Math.random() * 20);
-  const randomNumber2 = Math.floor(Math.random() * 20);
+  const randomNumber1 = getRandomNumber(0, 20);
+  const randomNumber2 = getRandomNumber(0, 20);
 
-  const randomOperatorIndex = Math.floor(Math.random() * 3);
+  const randomOperatorIndex = getRandomNumber(0, 3);
   let randomOperator;
   if (randomOperatorIndex >= 0 && randomOperatorIndex < 1) {
     randomOperator = '+';
@@ -42,23 +44,14 @@ const firstGameArr = () => {
   return array;
 };
 
-const firstGame = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  for (let i = 1; i <= 3; i += 1) {
-    const game = firstGameArr(i);
-    console.log(game[0]);
-    console.log(game[1]);
-    const answer = readlineSync.question('Your answer: ');
-    if (answer === game[2].toString()) {
-      console.log('Correct!');
-    } else {
-      console.log(`Wrong!\n"${answer}" is wrong answer ;(. Correct answer was '${game[2]}'\nLet's try again, ${name}!`);
-      process.exit();
-    }
+const firstRound = firstGameArr(1);
+const secondRound = firstGameArr(2);
+const thirdRound = firstGameArr(3);
+const questions = [firstRound[0], secondRound[0], thirdRound[0]];
+const answers = [firstRound[1], secondRound[1], thirdRound[1]];
 
-    console.log(`Congratulations, ${name}!`);
-  }
+const firstGame = () => {
+  gameMechanism('What is the result of the expression?', questions, answers);
 };
+
 export default firstGame;
