@@ -31,6 +31,6 @@ const questions = [firstRound[0], secondRound[0], thirdRound[0]];
 const answers = [firstRound[1], secondRound[1], thirdRound[1]];
 
 const forthGame = () => {
-  gameMechanism('Answer "yes" if the number is prime, otherwise answer "no".', questions, answers);
+  gameMechanism('Answer "yes" if given number is prime. Otherwise answer "no".', questions, answers);
 };
 export default forthGame;
