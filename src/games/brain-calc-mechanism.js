@@ -12,11 +12,9 @@ const getQuestionAndAnswer = () => {
   if (randomOperatorIndex >= 0 && randomOperatorIndex < 1) {
     randomOperator = '+';
   }
-
   if (randomOperatorIndex >= 1 && randomOperatorIndex < 2) {
     randomOperator = '-';
   }
-
   if (randomOperatorIndex >= 2 && randomOperatorIndex <= 3) {
     randomOperator = '*';
   }
@@ -25,15 +23,13 @@ const getQuestionAndAnswer = () => {
   array.push(questionGameOne);
 
   let realResult = 0;
-  if (randomOperatorIndex >= 0 && randomOperatorIndex < 1) {
+  if (randomOperator === '+') {
     realResult = randomNumber1 + randomNumber2;
   }
-
-  if (randomOperatorIndex >= 1 && randomOperatorIndex < 2) {
+  if (randomOperator === '-') {
     realResult = randomNumber1 - randomNumber2;
   }
-
-  if (randomOperatorIndex >= 2 && randomOperatorIndex <= 3) {
+  if (randomOperator === '*') {
     realResult = randomNumber1 * randomNumber2;
   }
   const rightAnswerOne = realResult;

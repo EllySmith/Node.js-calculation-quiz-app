@@ -9,19 +9,17 @@ const getQuestionAndAnswer = () => {
   const thirdGameQuestion = `Question: ${randomNumber1} ${randomNumber2}`;
   array.push(thirdGameQuestion);
 
-  const denominatorsOne = [];
-  for (let i = 1; i <= randomNumber1; i += 1) {
-    if (randomNumber1 % i === 0) {
-      denominatorsOne.push(i);
+  const getDenominators = (x) => {
+    const denominators = [];
+    for (let i = 1; i <= x; i += 1) {
+      if (x % i === 0) {
+        denominators.push(i);
+      }
     }
-  }
-
-  const denominatorsTwo = [];
-  for (let i = 1; i <= randomNumber2; i += 1) {
-    if (randomNumber2 % i === 0) {
-      denominatorsTwo.push(i);
-    }
-  }
+    return denominators;
+  };
+  const denominatorsOne = getDenominators(randomNumber1);
+  const denominatorsTwo = getDenominators(randomNumber2);
 
   const commonDenominators = [];
   for (let i = 1; i <= randomNumber1; i += 1) {
