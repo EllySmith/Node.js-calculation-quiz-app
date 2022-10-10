@@ -1,41 +1,30 @@
 import runGame from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
-const getQuestionAndAnswer = () => {
-  const array = [];
-
+const getRoundData = () => {
   const randomNumber1 = getRandomNumber(0, 20);
   const randomNumber2 = getRandomNumber(0, 20);
-  const randomOperatorIndex = getRandomNumber(1, 4);
+  const randomOperatorIndex = getRandomNumber(0, 2);
 
-  let randomOperator;
-  let realResult = 0;
-  switch (randomOperatorIndex) {
-    case 1: randomOperator = '+';
-      realResult = randomNumber1 + randomNumber2;
-      break;
-    case 2: randomOperator = '-';
-      realResult = randomNumber1 - randomNumber2;
-      break;
-    case 3: randomOperator = '*';
-      realResult = randomNumber1 * randomNumber2;
-      break;
-    default:
-      randomOperator = '+';
-      realResult = 0;
-  }
+  const operators = ['+', '-', '*'];
 
-  const questionGameOne = `Question: ${randomNumber1} ${randomOperator} ${randomNumber2}`;
-  array.push(questionGameOne);
+  const calculate = (number1, number2, operator) => {
+    switch (operator) {
+      case '+': return number1 + number2;
+      case '-': return number1 - number2;
+      case '*': return number1 * number2;
+      default:
+        return 0;
+    }
+  };
+  const question = `Question: ${randomNumber1} ${operators[randomOperatorIndex]} ${randomNumber2}`;
+  const rightAnswer = calculate(randomNumber1, randomNumber2, operators[randomOperatorIndex]);
 
-  const rightAnswerOne = realResult;
-  array.push(rightAnswerOne);
-
-  return array;
+  return [question, rightAnswer];
 };
 
 const runCalcGame = () => {
-  runGame('What is the result of the expression?', getQuestionAndAnswer);
+  runGame('What is the result of the expression?', getRoundData);
 };
 
 export default runCalcGame;
