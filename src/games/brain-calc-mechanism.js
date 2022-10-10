@@ -4,7 +4,11 @@ import getRandomNumber from '../randomNumber.js';
 const getRoundData = () => {
   const randomNumber1 = getRandomNumber(0, 20);
   const randomNumber2 = getRandomNumber(0, 20);
+<<<<<<< HEAD
   const randomOperatorIndex = getRandomNumber(0, 2);
+=======
+  const randomOperatorIndex = getRandomNumber(0, );
+>>>>>>> 8760459914d2fdac77ec204f8e14d599cdfb0103
 
   const operators = ['+', '-', '*'];
 
