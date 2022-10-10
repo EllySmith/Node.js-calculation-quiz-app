@@ -1,13 +1,13 @@
 import runGame from '../index.js';
-import getRandomNumber from '../randomnumber.js';
+import getRandomNumber from '../randomNumber.js';
 
 const getQuestionAndAnswer = () => {
   const array = [];
 
   const randomNumber1 = getRandomNumber(0, 20);
   const randomNumber2 = getRandomNumber(0, 20);
-
   const randomOperatorIndex = getRandomNumber(0, 3);
+
   let randomOperator;
   if (randomOperatorIndex >= 0 && randomOperatorIndex < 1) {
     randomOperator = '+';
@@ -23,8 +23,8 @@ const getQuestionAndAnswer = () => {
 
   const questionGameOne = `Question: ${randomNumber1} ${randomOperator} ${randomNumber2}`;
   array.push(questionGameOne);
-  let realResult = 0;
 
+  let realResult = 0;
   if (randomOperatorIndex >= 0 && randomOperatorIndex < 1) {
     realResult = randomNumber1 + randomNumber2;
   }
@@ -38,6 +38,7 @@ const getQuestionAndAnswer = () => {
   }
   const rightAnswerOne = realResult;
   array.push(rightAnswerOne);
+
   return array;
 };
 
