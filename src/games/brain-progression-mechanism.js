@@ -20,7 +20,7 @@ const getQuestionAndAnswer = () => {
   randomProgression[hiddenNumberIndex] = '..';
 
   const questionSequence = randomProgression.join(' ');
-  const fifthGameQuestion = `Question:${questionSequence}`;
+  const fifthGameQuestion = `Question: ${questionSequence}`;
   array.push(fifthGameQuestion);
   array.push(answer);
 
