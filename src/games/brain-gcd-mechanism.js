@@ -33,11 +33,7 @@ const getRoundData = () => {
 };
 
 const runGcdGame = () => {
-<<<<<<< HEAD
-  runGame('Find the greatest common divisor of given numbers.', getRoundDatax);
-=======
   runGame('Find the greatest common divisor of given numbers.', getRoundData);
->>>>>>> 8760459914d2fdac77ec204f8e14d599cdfb0103
 };
 
 export default runGcdGame;
