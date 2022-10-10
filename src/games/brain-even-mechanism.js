@@ -6,7 +6,7 @@ import runGame from '../index.js';
 const getQuestionAndAnswer = () => {
   const array = [];
 
-  const randomNumber = getRandomNumber(0, 20);
+  const randomNumber = getRandomNumber;
   const secondGameQuestion = `Question: ${randomNumber}`;
   array.push(secondGameQuestion);
 

@@ -5,7 +5,7 @@ import runGame from '../index.js';
 const getQuestionAndAnswer = () => {
   const array = [];
 
-  const randomNumber = getRandomNumber(1, 100);
+  const randomNumber = getRandomNumber;
   const forthGameQuestion = `Question: ${randomNumber}`;
   array.push(forthGameQuestion);
 
@@ -25,6 +25,5 @@ const getQuestionAndAnswer = () => {
 const runPrimeGame = () => {
   runGame('Answer "yes" if given number is prime. Otherwise answer "no".', getQuestionAndAnswer);
 };
-
 
 export default runPrimeGame;

@@ -3,8 +3,15 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/0a4ea64aaf93232a6e1c/maintainability)](https://codeclimate.com/github/EllySmith/frontend-project-lvl1/maintainability)
 
-To install clone the repository:
+Installation:
+
+Make sure you have Node.js v(13.+) installed, otherwise install it with the command 'brew install node' or update with the command 'brew upgrade node'.
+
 $git clone git@github.com:EllySmith/frontend-project-lvl1.git
+
+Run the command 'make install'
+
+Descriprion and commands: 
 
 Five games with different arythmetical caclulations. Every game consists of maximum three rounds. Three right answers is a winning condition. Every wrong answer stops the game.
 
