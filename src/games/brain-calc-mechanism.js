@@ -9,30 +9,25 @@ const getQuestionAndAnswer = () => {
   const randomOperatorIndex = getRandomNumber(1, 4);
 
   let randomOperator;
+  let realResult = 0;
   switch (randomOperatorIndex) {
     case 1: randomOperator = '+';
+      realResult = randomNumber1 + randomNumber2;
       break;
     case 2: randomOperator = '-';
+      realResult = randomNumber1 - randomNumber2;
       break;
     case 3: randomOperator = '*';
+      realResult = randomNumber1 * randomNumber2;
       break;
     default:
       randomOperator = '+';
+      realResult = 0;
   }
 
   const questionGameOne = `Question: ${randomNumber1} ${randomOperator} ${randomNumber2}`;
   array.push(questionGameOne);
 
-  let realResult = 0;
-  if (randomOperator === '+') {
-    realResult = randomNumber1 + randomNumber2;
-  }
-  if (randomOperator === '-') {
-    realResult = randomNumber1 - randomNumber2;
-  }
-  if (randomOperator === '*') {
-    realResult = randomNumber1 * randomNumber2;
-  }
   const rightAnswerOne = realResult;
   array.push(rightAnswerOne);
 
