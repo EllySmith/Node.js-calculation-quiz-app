@@ -1,26 +1,23 @@
 import runGame from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
-const getQuestionAndAnswer = () => {
-  const array = [];
-
+const getRoundData = () => {
   const randomNumber = getRandomNumber();
-  const secondGameQuestion = `Question: ${randomNumber}`;
-  array.push(secondGameQuestion);
+  const question = `Question: ${randomNumber}`;
 
-  let isNumberEven;
-  if (randomNumber % 2 === 0) {
-    isNumberEven = 'yes';
-  } else {
-    (isNumberEven = 'no');
+  const isEven = (num) => num % 2 === 0;
+  let rightAnswer;
+  if (isEven(randomNumber)) {
+    rightAnswer = 'yes';
+  } else if (!isEven(randomNumber)) {
+    rightAnswer = 'no';
   }
-  array.push(isNumberEven);
 
-  return array;
+  return [question, rightAnswer];
 };
 
 const runEvenGame = () => {
-  runGame('Answer "yes" if the number is even, otherwise answer "no".', getQuestionAndAnswer);
+  runGame('Answer "yes" if the number is even, otherwise answer "no".', getRoundData);
 };
 
 export default runEvenGame;
