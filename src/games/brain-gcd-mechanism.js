@@ -6,25 +6,15 @@ const getRoundData = () => {
   const randomNumber2 = getRandomNumber();
   const question = `Question: ${randomNumber1} ${randomNumber2}`;
 
-  const getDenominators = (x) => {
-    const denominators = [];
-    for (let i = 1; i <= x; i += 1) {
-      if (x % i === 0) {
-        denominators.push(i);
-      }
+  const gcd = (a, b) => {
+    if (!b) {
+      return a;
     }
-    return denominators;
-  };
-  const denominatorsOne = getDenominators(randomNumber1);
-  const denominatorsTwo = getDenominators(randomNumber2);
 
-  const commonDenominators = [];
-  for (let i = 1; i <= randomNumber1; i += 1) {
-    if (denominatorsTwo.includes(i) && denominatorsOne.includes(i)) {
-      commonDenominators.push(i);
-    }
-  }
-  const realAnswer = commonDenominators[commonDenominators.length - 1];
+    return gcd(b, a % b);
+  };
+
+  const realAnswer = gcd(randomNumber1, randomNumber2);
 
   return [question, realAnswer];
 };

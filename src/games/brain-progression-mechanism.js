@@ -17,7 +17,6 @@ const getRoundData = () => {
   };
 
   const randomProgression = getProgression(progressionStart, progressionLength, progressionStep);
-  console.log(randomProgression);
   const hiddenNumberIndex = getRandomNumber(1, 10);
   const rightAnswer = randomProgression[hiddenNumberIndex];
 
