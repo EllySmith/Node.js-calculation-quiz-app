@@ -12,7 +12,6 @@ const getRoundData = () => {
       break;
     }
   }
-
   const realAnswer = primeOrNot;
   return [question, realAnswer];
 };
