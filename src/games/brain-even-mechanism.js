@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
-import getRandomNumber from '../randomnumber.js';
+import getRandomNumber from '../randomNumber.js';
 
 import runGame from '../index.js';
 
 const getQuestionAndAnswer = () => {
   const array = [];
 
-  const randomNumber = getRandomNumber;
+  const randomNumber = getRandomNumber();
   const secondGameQuestion = `Question: ${randomNumber}`;
   array.push(secondGameQuestion);
 

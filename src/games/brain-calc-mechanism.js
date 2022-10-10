@@ -1,4 +1,4 @@
-import getRandomNumber from '../randomnumber.js';
+import getRandomNumber from '../randomNumber.js';
 
 import runGame from '../index.js';
 
@@ -42,8 +42,8 @@ const getQuestionAndAnswer = () => {
   return array;
 };
 
-const runFirstGame = () => {
+const runCalcGame = () => {
   runGame('What is the result of the expression?', getQuestionAndAnswer);
 };
 
-export default runFirstGame;
+export default runCalcGame;
