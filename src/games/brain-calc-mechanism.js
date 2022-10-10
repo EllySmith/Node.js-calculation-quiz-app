@@ -1,6 +1,5 @@
-import getRandomNumber from '../randomNumber.js';
-
 import runGame from '../index.js';
+import getRandomNumber from '../randomnumber.js';
 
 const getQuestionAndAnswer = () => {
   const array = [];
