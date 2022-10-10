@@ -6,7 +6,6 @@ const getQuestionAndAnswer = () => {
 
   const randomNumber1 = getRandomNumber();
   const randomNumber2 = getRandomNumber();
-
   const thirdGameQuestion = `Question: ${randomNumber1} ${randomNumber2}`;
   array.push(thirdGameQuestion);
 
@@ -18,17 +17,18 @@ const getQuestionAndAnswer = () => {
   }
 
   const denominatorsTwo = [];
-  for (let i = 1; i <= randomNumber1; i += 1) {
+  for (let i = 1; i <= randomNumber2; i += 1) {
     if (randomNumber2 % i === 0) {
       denominatorsTwo.push(i);
     }
   }
 
   const commonDenominators = [];
-  for (const value of denominatorsOne) {
-    if (denominatorsTwo.includes(value)) commonDenominators.push(value);
+  for (let i = 1; i <= randomNumber1; i += 1) {
+    if (denominatorsTwo.includes(i) && denominatorsOne.includes(i)) {
+      commonDenominators.push(i);
+    }
   }
-
   const thirdGameAnswer = commonDenominators[commonDenominators.length - 1];
   array.push(thirdGameAnswer);
   return array;
