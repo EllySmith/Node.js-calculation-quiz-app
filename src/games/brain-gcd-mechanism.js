@@ -1,8 +1,8 @@
 import getRandomNumber from '../randomnumber.js';
 
-import gameMechanism from '../index.js';
+import runGame from '../index.js';
 
-const thirdGameArr = () => {
+const getQuestionAndAnswer = () => {
   const array = [];
 
   const randomNumber1 = getRandomNumber(1, 100);
@@ -35,14 +35,8 @@ const thirdGameArr = () => {
   return array;
 };
 
-const firstRound = thirdGameArr(1);
-const secondRound = thirdGameArr(2);
-const thirdRound = thirdGameArr(3);
-const questions = [firstRound[0], secondRound[0], thirdRound[0]];
-const answers = [firstRound[1], secondRound[1], thirdRound[1]];
-
-const thirdGame = () => {
-  gameMechanism('Find the greatest common divisor of given numbers.', questions, answers);
+const runGcdGame = () => {
+  runGame('Find the greatest common divisor of given numbers.', getQuestionAndAnswer);
 };
 
-export default thirdGame;
+export default runGcdGame;

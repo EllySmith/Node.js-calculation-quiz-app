@@ -1,8 +1,8 @@
 import getRandomNumber from '../randomnumber.js';
 
-import gameMechanism from '../index.js';
+import runGame from '../index.js';
 
-const firstGameArr = () => {
+const getQuestionAndAnswer = () => {
   const array = [];
 
   const randomNumber1 = getRandomNumber(0, 20);
@@ -42,14 +42,8 @@ const firstGameArr = () => {
   return array;
 };
 
-const firstRound = firstGameArr(1);
-const secondRound = firstGameArr(2);
-const thirdRound = firstGameArr(3);
-const questions = [firstRound[0], secondRound[0], thirdRound[0]];
-const answers = [firstRound[1], secondRound[1], thirdRound[1]];
-
-const firstGame = () => {
-  gameMechanism('What is the result of the expression?', questions, answers);
+const runFirstGame = () => {
+  runGame('What is the result of the expression?', getQuestionAndAnswer);
 };
 
-export default firstGame;
+export default runFirstGame;

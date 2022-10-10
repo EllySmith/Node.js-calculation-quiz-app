@@ -1,8 +1,8 @@
 import getRandomNumber from '../randomnumber.js';
 
-import gameMechanism from '../index.js';
+import runGame from '../index.js';
 
-const forthGameArr = () => {
+const getQuestionAndAnswer = () => {
   const array = [];
 
   const randomNumber = getRandomNumber(1, 100);
@@ -22,13 +22,9 @@ const forthGameArr = () => {
   return array;
 };
 
-const firstRound = forthGameArr(1);
-const secondRound = forthGameArr(2);
-const thirdRound = forthGameArr(3);
-const questions = [firstRound[0], secondRound[0], thirdRound[0]];
-const answers = [firstRound[1], secondRound[1], thirdRound[1]];
-
-const forthGame = () => {
-  gameMechanism('Answer "yes" if given number is prime. Otherwise answer "no".', questions, answers);
+const runPrimeGame = () => {
+  runGame('Answer "yes" if given number is prime. Otherwise answer "no".', getQuestionAndAnswer);
 };
-export default forthGame;
+
+
+export default runPrimeGame;

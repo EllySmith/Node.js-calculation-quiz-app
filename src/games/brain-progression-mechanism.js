@@ -1,8 +1,8 @@
-import gameMechanism from '../index.js';
+import runGame from '../index.js';
 
 import getRandomNumber from '../randomnumber.js';
 
-const fifthGameArr = () => {
+const getQuestionAndAnswer = () => {
   const array = [];
 
   const randomProgressionStep = getRandomNumber(3, 10);
@@ -31,14 +31,8 @@ const fifthGameArr = () => {
   return array;
 };
 
-const firstRound = fifthGameArr(1);
-const secondRound = fifthGameArr(2);
-const thirdRound = fifthGameArr(3);
-const questions = [firstRound[0], secondRound[0], thirdRound[0]];
-const answers = [firstRound[1], secondRound[1], thirdRound[1]];
-
-const fifthGame = () => {
-  gameMechanism('What number is missing in the progression?', questions, answers);
+const runProgressionGame = () => {
+  runGame('What number is missing in the progression?', getQuestionAndAnswer);
 };
 
-export default fifthGame;
+export default runProgressionGame;
