@@ -40,5 +40,3 @@ Brain-progression: You are given a random number progression with one element hi
 <img width="866" alt="Screenshot 2022-10-09 at 18 40 58" src="https://user-images.githubusercontent.com/107119095/194769200-4d04fdef-c5c2-49e0-9adc-5624c706fd4b.png">
 
 <img width="866" alt="Screenshot 2022-10-09 at 18 41 18" src="https://user-images.githubusercontent.com/107119095/194769205-1abc969e-3f1b-4525-b0c9-46edde37f439.png">
-
->>>>>>> 30888d03d943acc6956b770c83c671464a919b63
