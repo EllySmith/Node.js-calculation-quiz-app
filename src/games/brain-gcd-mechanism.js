@@ -2,12 +2,9 @@ import runGame from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
 const getRoundData = () => {
-  const array = [];
-
   const randomNumber1 = getRandomNumber();
   const randomNumber2 = getRandomNumber();
-  const thirdGameQuestion = `Question: ${randomNumber1} ${randomNumber2}`;
-  array.push(thirdGameQuestion);
+  const question = `Question: ${randomNumber1} ${randomNumber2}`;
 
   const getDenominators = (x) => {
     const denominators = [];
@@ -27,9 +24,9 @@ const getRoundData = () => {
       commonDenominators.push(i);
     }
   }
-  const thirdGameAnswer = commonDenominators[commonDenominators.length - 1];
-  array.push(thirdGameAnswer);
-  return array;
+  const realAnswer = commonDenominators[commonDenominators.length - 1];
+
+  return [question, realAnswer];
 };
 
 const runGcdGame = () => {

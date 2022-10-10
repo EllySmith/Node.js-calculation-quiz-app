@@ -2,11 +2,8 @@ import runGame from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
 const getRoundData = () => {
-  const array = [];
-
   const randomNumber = getRandomNumber();
-  const forthGameQuestion = `Question: ${randomNumber}`;
-  array.push(forthGameQuestion);
+  const question = `Question: ${randomNumber}`;
 
   let primeOrNot = 'yes';
   for (let i = 2; i < randomNumber; i += 1) {
@@ -16,9 +13,8 @@ const getRoundData = () => {
     }
   }
 
-  const forthGameAnswer = primeOrNot;
-  array.push(forthGameAnswer);
-  return array;
+  const realAnswer = primeOrNot;
+  return [question, realAnswer];
 };
 
 const runPrimeGame = () => {
