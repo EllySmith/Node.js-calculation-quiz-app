@@ -1,30 +1,30 @@
-import runGame from '../index.js';
+import startGame from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
+const calculate = (numberOne, numberTwo, operator) => {
+  switch (operator) {
+    case '+': return numberOne + numberTwo;
+    case '-': return numberOne - numberTwo;
+    case '*': return numberOne * numberTwo;
+    default:
+      console.log('Error: wrong input.');
+  }
+};
+
 const getRoundData = () => {
-  const randomNumber1 = getRandomNumber(0, 20);
-  const randomNumber2 = getRandomNumber(0, 20);
-  const randomOperatorIndex = getRandomNumber(0, 2);
+  const randomNumberOne = getRandomNumber(0, 20);
+  const randomNumberTwo = getRandomNumber(0, 20);
+  const randomOperatorIndex = getRandomNumber(0, 3);
 
   const operators = ['+', '-', '*'];
-
-  const calculate = (number1, number2, operator) => {
-    switch (operator) {
-      case '+': return number1 + number2;
-      case '-': return number1 - number2;
-      case '*': return number1 * number2;
-      default:
-        return 0;
-    }
-  };
-  const question = `Question: ${randomNumber1} ${operators[randomOperatorIndex]} ${randomNumber2}`;
-  const rightAnswer = calculate(randomNumber1, randomNumber2, operators[randomOperatorIndex]);
+  const question = `Question: ${randomNumberOne} ${operators[randomOperatorIndex]} ${randomNumberTwo}`;
+  const rightAnswer = calculate(randomNumberOne, randomNumberTwo, operators[randomOperatorIndex]);
 
   return [question, rightAnswer];
 };
 
-const runCalcGame = () => {
-  runGame('What is the result of the expression?', getRoundData);
+const startCalcGame = () => {
+  startGame('What is the result of the expression?', getRoundData);
 };
 
-export default runCalcGame;
+export default startCalcGame;
