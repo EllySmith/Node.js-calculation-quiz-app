@@ -9,7 +9,7 @@ const calculate = (numberOne, numberTwo, operator) => {
     default:
       throw Error('Error: wrong input');
   }
-}; // Вынесла, но получилась ошибка в тестах
+};
 
 const getRoundData = () => {
   const randomNumberOne = getRandomNumber(0, 20);
