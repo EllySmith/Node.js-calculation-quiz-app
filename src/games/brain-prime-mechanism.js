@@ -1,5 +1,5 @@
 import startGame from '../index.js';
-import getNumber from '../randomNumber.js';
+import getRandomNumber from '../randomNumber.js';
 
 const isPrime = (number) => {
   let primeOrNot = true;
@@ -13,7 +13,7 @@ const isPrime = (number) => {
 };
 
 const getRoundData = () => {
-  const randomNumber = getNumber();
+  const randomNumber = getRandomNumber();
   const question = `Question: ${randomNumber}`;
 
   const realAnswer = isPrime(randomNumber) ? 'yes' : 'no';
