@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import runGame from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
 const getProgression = (start, lenght, step) => {
@@ -27,7 +27,7 @@ const getRoundData = () => {
 };
 
 const startProgressionGame = () => {
-  startGame('What number is missing in the progression?', getRoundData);
+  runGame('What number is missing in the progression?', getRoundData);
 };
 
 export default startProgressionGame;

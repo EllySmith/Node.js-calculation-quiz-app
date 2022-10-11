@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import runGame from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
 const isEven = (num) => num % 2 === 0;
@@ -12,7 +12,7 @@ const getRoundData = () => {
 };
 
 const startEvenGame = () => {
-  startGame('Answer "yes" if the number is even, otherwise answer "no".', getRoundData);
+  runGame('Answer "yes" if the number is even, otherwise answer "no".', getRoundData);
 };
 
 export default startEvenGame;

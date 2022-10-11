@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import runGame from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
 const isPrime = (number) => {
@@ -24,7 +24,7 @@ const getRoundData = () => {
 };
 
 const startPrimeGame = () => {
-  startGame('Answer "yes" if given number is prime. Otherwise answer "no".', getRoundData);
+  runGame('Answer "yes" if given number is prime. Otherwise answer "no".', getRoundData);
 };
 
 export default startPrimeGame;

@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import runGame from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
 const findGreatestDenominator = (numberOne, numberTwo) => {
@@ -19,7 +19,7 @@ const getRoundData = () => {
 };
 
 const startGcdGame = () => {
-  startGame('Find the greatest common divisor of given numbers.', getRoundData);
+  runGame('Find the greatest common divisor of given numbers.', getRoundData);
 };
 
 export default startGcdGame;

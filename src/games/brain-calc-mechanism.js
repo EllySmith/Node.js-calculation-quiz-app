@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import runGame from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
 const calculate = (numberOne, numberTwo, operator) => {
@@ -7,7 +7,7 @@ const calculate = (numberOne, numberTwo, operator) => {
     case '-': return numberOne - numberTwo;
     case '*': return numberOne * numberTwo;
     default:
-      console.log('Error: wrong input.');
+      throw Error('Error: wrong input');
   }
 }; // Вынесла, но получилась ошибка в тестах
 
@@ -24,7 +24,7 @@ const getRoundData = () => {
 };
 
 const startCalcGame = () => {
-  startGame('What is the result of the expression?', getRoundData);
+  runGame('What is the result of the expression?', getRoundData);
 };
 
 export default startCalcGame;
