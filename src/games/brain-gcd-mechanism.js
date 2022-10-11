@@ -1,19 +1,19 @@
 import startGame from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
-const gcd = (numberOne, numberTwo) => {
+const findGreatestDenominator = (numberOne, numberTwo) => {
   if (!numberTwo) {
     return numberOne;
   }
-  return gcd(numberTwo, numberOne % numberTwo);
+  return findGreatestDenominator(numberTwo, numberOne % numberTwo);
 };
 
 const getRoundData = () => {
-  const getNumberOne = getRandomNumber();
-  const getNumberTwo = getRandomNumber();
-  const question = `Question: ${getNumberOne} ${getNumberTwo}`;
+  const randomNumberOne = getRandomNumber();
+  const randomNumberTwo = getRandomNumber();
+  const question = `Question: ${randomNumberOne} ${randomNumberTwo}`;
 
-  const realAnswer = gcd(getNumberOne, getNumberTwo);
+  const realAnswer = findGreatestDenominator(randomNumberOne, randomNumberTwo);
 
   return [question, realAnswer];
 };
