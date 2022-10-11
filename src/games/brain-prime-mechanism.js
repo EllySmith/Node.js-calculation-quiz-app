@@ -2,6 +2,9 @@ import startGame from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
 const isPrime = (number) => {
+  if (number === 1) {
+    return true;
+  }
   let primeOrNot = true;
   for (let i = 2; i < number; i += 1) {
     if (number % i === 0) {
